@@ -85,7 +85,10 @@
                         <td>${user.userId}</td>
                         <td>${user.name}</td>
                         <td>${user.email}</td>
-                        <td><a href="/user/${user.userId}" class="btn btn-success" role="button">수정</a>
+                        <td>
+							<form action="/user/edit" method="post">
+							<input type="hidden" name="userId" value="${user.userId}">
+							<input type="submit" value="수정"></form>
                         </td>
                     </tr>
                 </c:forEach>

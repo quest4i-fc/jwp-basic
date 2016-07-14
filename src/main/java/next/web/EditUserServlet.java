@@ -27,10 +27,13 @@ public class EditUserServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	    User user = DataBase.findUserById(request.getParameter("userid"));
+	    User user = DataBase.findUserById(request.getParameter("userId"));
+	    request.setAttribute("user", user);
+
 	    LOGGER.debug("user name to edit : {}", user.getName());
 	    // TODO user객체를 전달하기 위해서 forward를 해야 한다.
-	    RequestDispatcher rd = request.getRequestDispatcher("edit.jsp");
+	    RequestDispatcher rd = request.getRequestDispatcher("/user/edit.jsp");
+	    rd.forward(request, response);
 	}
 
 }
