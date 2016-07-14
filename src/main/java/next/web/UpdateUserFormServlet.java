@@ -15,11 +15,11 @@ import core.db.DataBase;
 import next.model.User;
 
 @WebServlet("/user/update")
-public class UpdateUserServlet extends HttpServlet {
+public class UpdateUserFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	
-    private static final Logger LOGGER = LoggerFactory.getLogger(UpdateUserServlet.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(UpdateUserFormServlet.class);
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    

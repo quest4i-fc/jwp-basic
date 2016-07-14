@@ -13,6 +13,14 @@ public class User {
 		this.name = name;
 		this.email = email;
 	}
+	
+	public boolean isLogin(String passwd) {
+	    boolean success = false;
+	    if (this.password.equals(passwd)) {
+	        success = true;
+	    }
+	    return success;
+	}
 
 	public String getUserId() {
 		return userId;
@@ -77,7 +85,5 @@ public class User {
 		} else if (!userId.equals(other.userId))
 			return false;
 		return true;
-	}
-	
-	
+	} // end of equals
 }
