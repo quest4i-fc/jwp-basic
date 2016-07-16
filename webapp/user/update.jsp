@@ -92,8 +92,8 @@
                   <label for="email">이메일</label>
                   <input type="email" class="form-control" id="email" name="email" value="${user.email}" placeholder="Email">
               </div>
-              <button type="submit" class="btn btn-success clearfix pull-right">수정<button>
-              <div class="clearfix" />
+              <button type="submit" class="btn btn-success clearfix pull-right">수정</button>
+              <div class="clearfix"></div>
           </form>
         </div>
     </div>
