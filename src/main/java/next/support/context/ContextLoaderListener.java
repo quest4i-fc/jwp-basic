@@ -12,6 +12,8 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 import core.jdbc.ConnectionManager;
 
+// 서블릿 컨테이너 전체 초기화
+
 @WebListener
 public class ContextLoaderListener implements ServletContextListener {
 	private static final Logger logger = LoggerFactory.getLogger(ContextLoaderListener.class);
