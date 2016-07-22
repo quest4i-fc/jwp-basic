@@ -48,9 +48,14 @@
 						<li><a href="#">»</a></li>
 					</ul>
 				</div>
+				<!-- 요구사항4 -->
+				<c:choose>
+				<c:when test="${not empty sessionScope.user}">
 				<div class="col-md-3 qna-write">
 					<a href="/qna/form" class="btn btn-primary pull-right" role="button">질문하기</a>
 				</div>
+				</c:when>
+				</c:choose>
 			</div>
 		</div>
 	</div>
