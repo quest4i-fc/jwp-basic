@@ -5,15 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
-import next.model.Question;
 import core.jdbc.JdbcTemplate;
 import core.jdbc.KeyHolder;
 import core.jdbc.PreparedStatementCreator;
 import core.jdbc.RowMapper;
+import next.model.Question;
 
 public class QuestionDao {
 	public List<Question> findAll() {
