@@ -63,7 +63,7 @@ public class QuestionDao {
                 pstmt.setString(2, question.getTitle());
                 pstmt.setString(3, question.getContents());
                 pstmt.setTimestamp(4, new Timestamp(question.getTimeFromCreateDate()));
-                pstmt.setLong(5, question.getCountOfComment()); 
+                pstmt.setLong(5, question.getCountOfAnswer()); 
                 return pstmt;
             }
         };
@@ -71,5 +71,21 @@ public class QuestionDao {
         KeyHolder keyHolder = new KeyHolder();
         jdbcTemplate.update(psc, keyHolder);
         return findById(keyHolder.getId());
+    }
+    
+    // 요구사항 8 - answer가 추가되었거나 삭제되었을때 countOfAnswer 값을 수정하는 기능을 추가한다.
+    public int increaseCountOfAnswer(long questionId) {
+    	int new_value = findById(questionId).getCountOfAnswer() + 1;
+    	JdbcTemplate jdbcTemplate = new JdbcTemplate();
+    	String sql = "UPDATE QUESTIONS SET countOfAnswer=? WHERE questionId=?";
+    	PreparedStatementCreator psc = new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, new_value);
+				pstmt.setLong(2, questionId);
+				return pstmt;
+			}
+		};
     }
 }
